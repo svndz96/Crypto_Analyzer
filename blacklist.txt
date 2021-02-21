@@ -1,0 +1,1 @@
+["btc", "eth", "bnb", "xrp", "wbtc", "cusdc", "ausdc", "usdt", "ampl", "dai", "eosdt", "dusd", "dgx", "esd", "susd", "tusd", "pbtc", "pax"]

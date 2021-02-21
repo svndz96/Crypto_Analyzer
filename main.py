@@ -1,103 +1,220 @@
-from replit import db
-import requests
-import json
+
+from libraries import *
+from crypto_functions import *
+
+import matplotlib.pyplot as plt
 
 
 
-#Trending API call
-def get_trending():
-	trending_list = []
-	r = requests.get('https://api.coingecko.com/api/v3/search/trending')
-	r_dict = r.json()
+def search_crypto(cryptos):
 
-	for item in r_dict.get('coins'):
-		coin = item.get('item')
-		trending_list.append(coin)
-	return trending_list
+	search = input('Enter cryptocurrency to display info: ')
+	for item in cryptos:
+		if item.get('symbol') == search:
+			print(item.get('name'))
+			print(item.get('current_price'))
 
+			input()
+			
 
-#Create crypto profiles
-def get_crypto():
-	crypto_list = []
-	r = requests.get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page=1&sparkline=true')
-	r_dict = r.json()
+def generate_sparklines(cryptos, path):
+	folder = 'sparklines'
+	neon_pink = '#ff07db'
+	neon_cyan = '#00fefc'
 
+	for item in cryptos:
 
-	#values for crypto profile
-	for item in r_dict:
-		crypto_dict = {}
-		crypto_dict['id'] = item.get('id')
-		crypto_dict['name'] = item.get('name')
-		crypto_dict['symbol'] = item.get('symbol')
-		crypto_dict['rank'] = item.get('market_cap_rank')
+		sparkline = item.get('sparkline')
+		if sparkline is not None:
+			if sparkline[0] < sparkline[-1]:
+				plt.plot(sparkline, neon_cyan)
+			else:
+				plt.plot(sparkline, neon_pink)
 
-		crypto_dict['market_cap'] = item.get('market_cap')
-		crypto_dict['current_price'] = item.get('current_price')
-		crypto_dict['volume_24'] = item.get('total_volume')
-		crypto_dict['low_24'] = item.get('low_24')
-		crypto_dict['high_24'] = item.get('high_24')
-
-		crypto_dict['price_change_24h'] = item.get('price_change_24h')
-		crypto_dict['price_change_percentage_24h'] = item.get('price_change_percentage_24h')
-		crypto_dict['market_cap_change_24h'] = item.get('market_cap_change_24h')
-		crypto_dict['market_cap_change_percentage_24h'] = item.get('market_cap_change_percentage_24h')
-
-		crypto_dict['circulating_supply'] = item.get('circulating_supply')
-		crypto_dict['total_supply'] = item.get('total_supply')
-		crypto_dict['max_supply'] = item.get('max_supply')
+			plt.axis('off')
+			filename = item.get('symbol') + '.png'
+			destination = "{}/".format(folder) + filename
+			plt.savefig(destination, transparent=True)
+			plt.clf()
+		print(item.get('id'))
 
 
-		crypto_dict['ath'] = item.get('ath')
-		crypto_dict['ath_change_percentage'] = item.get('ath_change_percentage')
-		crypto_dict['ath_date'] = item.get('ath_date')
+def update_watchlist():
+	with open('watchlist.txt', 'r') as file:
+		watchlist = json.load(file)
+	with open('blacklist.txt', 'r') as file:
+		blacklist = json.load(file)
+	return watchlist, blacklist
 
-		crypto_list.append(crypto_dict)
-
-	return crypto_list
-
-
-def convert_dicts_json(dicts_list):
-	crypto_json = json.dumps(dicts_list)
-	return crypto_json
-
-
-
-
-
-class crypto:  
-    def __init__(self, name):  
-        self.name = name  
-
-
-
-
-
-
-cryptos = get_crypto()
-
-
-for item in cryptos:
-	coin = item.get('id')
-
-	if (coin == 'bitcoin'):
-
-		cryptocurrency_api_url = 'https://api.coingecko.com/api/v3/coins/' + coin + '?tickers=true&market_data=true&community_data=true&developer_data=true&sparkline=true'
-		r_crypto = requests.get(cryptocurrency_api_url)
-		coin_dict = r_crypto.json()
-		description = coin_dict.get('description').get('en')
-		print(description)
-		item['description'] = description
+def watchlist_creator(cryptos, watchlist, blacklist):
+	for coin in cryptos:
+		print(coin.get('name') + "({})".format(coin.get('symbol')))
+		print('W. Add to Watchlist')
+		print('B. Add to Blacklist')
+		print('Q. Quit')
+		select = input('Select an Option: ')
+		if select == 'W':
+			watchlist.append(coin.get('symbol'))
+		elif select == 'B':
+			blacklist.append(coin.get('symbol'))
+		elif select == 'Q':
+			break
+	watchlist_json = json.dumps(watchlist)
+	with open('watchlist.txt', 'w') as file:
+		file.write(watchlist_json)
+	blacklist_json = json.dumps(blacklist)
+	with open('blacklist.txt', 'w') as file:
+		file.write(blacklist_json)
 
 
-	#print(next(item for item in crypto_list if item["id"] == search))
+def global_crypto():
+	crypto_request = requests.get('https://api.coingecko.com/api/v3/global')
+	crypto_dict = crypto_request.json()
+	return crypto_dict
 
 
-for item in cryptos:
-	coin = item.get('id')
 
-	if (coin == 'bitcoin'):
-		print(item.get('description'))
+def list_coins(cryptos):
+	for item in cryptos:
+		print(item.get('name') + ' ' + "({})".format(item.get('symbol').upper()))
+		print('Rank: ' + str(item.get('rank')))
+		print('Market Cap: ' + "{:,.0f}".format(item.get('market_cap')))
+		print('Dominance: ' + "{:.2f}".format(item.get('dominance')))
+		print('')
+	input()
 
+
+
+def main():
+	my_path = os.path.abspath(__file__)
+
+	os.system('clear')
+	#list of crypto dictionary objects
+	market_data = global_crypto()
+	cryptos = update_cryptos(market_data)
+	save_json(cryptos, 'cryptosJSON.txt')
+	
+
+
+	#Parameters
+	stablecoins = ['wbtc', 'cusdc', 'ausdc', 'usdt', 'ampl', 'dai', 'eosdt', 'dusd', 'dgx', 'esd', 'susd', 'tusd', 'pbtc', 'pax']
+	watchlist, blacklist = update_watchlist()
+	#def update_watchlist():
+	with open('watchlist.txt', 'r') as file:
+		watchlist = json.load(file)
+	with open('blacklist.txt', 'r') as file:
+		blacklist = json.load(file)
+	blacklist = blacklist + stablecoins
+
+
+
+
+
+
+	menu = True
+	while (menu):
+		os.system('clear')
+
+		print('Market Cap: ' + "{:,.0f}".format(market_data.get('data').get('total_market_cap').get('usd')))
+		print('Change: ' + "{:.2f}".format(market_data.get('data').get('market_cap_change_percentage_24h_usd')))
+
+		print('24h Volume: ' + "{:,.0f}".format(market_data.get('data').get('total_volume').get('usd')))
+		print('')
+
+		
+
+		header_title('CryptoVizor', 'All-In-One Cryptocurrency Tracker')
+		print('1. Search Cryptocurrency')
+		print('2. Watchlist/Blacklist')
+		print('3. Show coins')
+		print('4. Generate Sparklines')
+
+
+		print('')
+		print('11. View All Time Highs')
+		print('4. Dominance Simulator')
+		print('5. Plot Sparklines')
+
+		print()
+		print('7. Create Crypto List')
+		print()
+		print('8. Update Crypto List - Quick')
+		print('9. Update Crypto List - Hourly')
+
+		print()
+		print('0. Exit Program')
+		print()
+
+
+
+
+		select = input('Select an option: ')
+		os.system('clear')
+		if(select == '1'):
+			search_crypto(cryptos)
+		elif(select == '2'):
+			watchlist_creator(cryptos, watchlist, blacklist)
+
+		elif(select == '3'):
+			list_coins(cryptos)
+		elif(select == '4'):
+			list_coins(generate_sparklines(cryptos, my_path))
+
+
+
+		elif(select == '11'):
+			ath_profit(cryptos, blacklist)
+
+		elif(select == '5'):
+			sparkline_plot()
+		elif(select == '7'):
+			create_cryptos()
+		elif(select == '8'):
+			update_cryptos(market_data)
+		elif(select == '9'):
+			create_cryptos()
+
+
+		elif(select == '0'):
+			menu = False
+		else:
+			print('Invalid selection')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+if __name__ == "__main__":
+    main()
 
 
 

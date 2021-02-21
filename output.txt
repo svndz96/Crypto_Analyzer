@@ -1,0 +1,732 @@
+CryptoVizor
+All-In-One Cryptocurrency Tracker
+------------------------------
+
+1. Trending Cryptos List
+2. View All Time Highs
+9. Admin
+0. Exit Program
+
+Select an option: CryptoVizor
+All-In-One Cryptocurrency Tracker
+------------------------------
+
+1. Trending Cryptos List
+2. View All Time Highs
+9. Admin
+0. Exit Program
+
+Select an option: All-Time-High Profits $$$
+Show all-time-high data and profit multipliers
+------------------------------
+
+Uniswap (UNI)
+Rank: 14
+Market Cap: 6,292,912,553		24h Volume: 1,170,503,631
+--------------------------------------------------
+Current price: 21.03
+--------------------------------------------------
+All Time High: 23.42	Change: -10.21721
+Profit Multiplier: 1.11
+Reached ATH on: 2021-02-12T07:23:28.730Z
+
+VeChain (VET)
+Rank: 27
+Market Cap: 3,471,775,262		24h Volume: 857,728,655
+--------------------------------------------------
+Current price: 0.053559
+--------------------------------------------------
+All Time High: 0.059975	Change: -10.73725
+Profit Multiplier: 1.12
+Reached ATH on: 2021-02-13T05:02:30.271Z
+
+Nexus Mutual (NXM)
+Rank: 98
+Market Cap: 450,041,835		24h Volume: 199,127
+--------------------------------------------------
+Current price: 67.59
+--------------------------------------------------
+All Time High: 75.73	Change: -10.75805
+Profit Multiplier: 1.12
+Reached ATH on: 2020-09-01T06:30:27.893Z
+
+Binance Coin (BNB)
+Rank: 7
+Market Cap: 19,362,131,144		24h Volume: 2,066,575,009
+--------------------------------------------------
+Current price: 131.24
+--------------------------------------------------
+All Time High: 147.36	Change: -11.14884
+Profit Multiplier: 1.12
+Reached ATH on: 2021-02-10T09:05:45.957Z
+
+Enjin Coin (ENJ)
+Rank: 90
+Market Cap: 517,944,744		24h Volume: 68,266,652
+--------------------------------------------------
+Current price: 0.558723
+--------------------------------------------------
+All Time High: 0.635456	Change: -12.29469
+Profit Multiplier: 1.14
+Reached ATH on: 2021-02-11T09:04:04.901Z
+
+Huobi Token (HT)
+Rank: 39
+Market Cap: 2,261,348,012		24h Volume: 501,919,981
+--------------------------------------------------
+Current price: 12.28
+--------------------------------------------------
+All Time High: 13.96	Change: -12.36976
+Profit Multiplier: 1.14
+Reached ATH on: 2021-02-10T23:14:02.416Z
+
+Binance USD (BUSD)
+Rank: 50
+Market Cap: 1,630,073,416		24h Volume: 3,091,235,954
+--------------------------------------------------
+Current price: 1.0
+--------------------------------------------------
+All Time High: 1.15	Change: -13.24216
+Profit Multiplier: 1.15
+Reached ATH on: 2020-03-13T02:35:42.953Z
+
+Compound (COMP)
+Rank: 43
+Market Cap: 2,114,512,902		24h Volume: 224,584,854
+--------------------------------------------------
+Current price: 494.15
+--------------------------------------------------
+All Time High: 566.46	Change: -13.40315
+Profit Multiplier: 1.15
+Reached ATH on: 2021-02-12T15:53:33.450Z
+
+Balancer (BAL)
+Rank: 96
+Market Cap: 491,484,183		24h Volume: 165,489,529
+--------------------------------------------------
+Current price: 45.76
+--------------------------------------------------
+All Time High: 53.24	Change: -14.51446
+Profit Multiplier: 1.16
+Reached ATH on: 2021-02-12T17:59:41.044Z
+
+USD Coin (USDC)
+Rank: 13
+Market Cap: 7,451,935,552		24h Volume: 1,893,483,899
+--------------------------------------------------
+Current price: 1.0
+--------------------------------------------------
+All Time High: 1.17	Change: -14.65305
+Profit Multiplier: 1.17
+Reached ATH on: 2019-05-08T00:40:28.300Z
+
+Amp (AMP)
+Rank: 57
+Market Cap: 1,297,875,204		24h Volume: 11,212,035
+--------------------------------------------------
+Current price: 0.0358622
+--------------------------------------------------
+All Time High: 0.04235032	Change: -15.50623
+Profit Multiplier: 1.18
+Reached ATH on: 2021-02-12T16:19:20.648Z
+
+Maker (MKR)
+Rank: 37
+Market Cap: 2,287,252,470		24h Volume: 172,706,566
+--------------------------------------------------
+Current price: 2521.8
+--------------------------------------------------
+All Time High: 3011.82	Change: -15.81903
+Profit Multiplier: 1.19
+Reached ATH on: 2021-02-05T15:09:34.341Z
+
+Tezos (XTZ)
+Rank: 26
+Market Cap: 3,553,920,423		24h Volume: 728,392,934
+--------------------------------------------------
+Current price: 4.72
+--------------------------------------------------
+All Time High: 5.56	Change: -15.91601
+Profit Multiplier: 1.18
+Reached ATH on: 2021-02-14T02:12:22.376Z
+
+THORChain (RUNE)
+Rank: 67
+Market Cap: 984,495,020		24h Volume: 67,824,812
+--------------------------------------------------
+Current price: 4.16
+--------------------------------------------------
+All Time High: 4.96	Change: -16.63625
+Profit Multiplier: 1.19
+Reached ATH on: 2021-02-10T10:22:02.631Z
+
+OKB (OKB)
+Rank: 38
+Market Cap: 2,264,564,971		24h Volume: 257,321,656
+--------------------------------------------------
+Current price: 8.36
+--------------------------------------------------
+All Time High: 10.09	Change: -17.34211
+Profit Multiplier: 1.21
+Reached ATH on: 2021-02-10T12:01:58.381Z
+
+Aave (AAVE)
+Rank: 16
+Market Cap: 5,884,172,188		24h Volume: 1,177,960,837
+--------------------------------------------------
+Current price: 474.74
+--------------------------------------------------
+All Time High: 575.15	Change: -17.45878
+Profit Multiplier: 1.21
+Reached ATH on: 2021-02-10T06:12:13.409Z
+
+PancakeSwap (CAKE)
+Rank: 78
+Market Cap: 749,802,521		24h Volume: 79,356,680
+--------------------------------------------------
+Current price: 6.65
+--------------------------------------------------
+All Time High: 8.13	Change: -18.28254
+Profit Multiplier: 1.22
+Reached ATH on: 2021-02-10T08:02:28.416Z
+
+1inch (1INCH)
+Rank: 94
+Market Cap: 492,656,092		24h Volume: 364,884,147
+--------------------------------------------------
+Current price: 5.12
+--------------------------------------------------
+All Time High: 6.28	Change: -18.43204
+Profit Multiplier: 1.23
+Reached ATH on: 2021-02-05T16:32:20.122Z
+
+Celsius Network (CEL)
+Rank: 41
+Market Cap: 2,128,189,866		24h Volume: 8,234,628
+--------------------------------------------------
+Current price: 5.57
+--------------------------------------------------
+All Time High: 6.82	Change: -18.57231
+Profit Multiplier: 1.22
+Reached ATH on: 2021-01-03T16:32:43.984Z
+
+Fantom (FTM)
+Rank: 97
+Market Cap: 467,288,545		24h Volume: 87,574,054
+--------------------------------------------------
+Current price: 0.184005
+--------------------------------------------------
+All Time High: 0.226623	Change: -18.85723
+Profit Multiplier: 1.23
+Reached ATH on: 2021-01-29T03:24:58.856Z
+
+Near (NEAR)
+Rank: 59
+Market Cap: 1,264,793,887		24h Volume: 134,780,018
+--------------------------------------------------
+Current price: 4.39
+--------------------------------------------------
+All Time High: 5.45	Change: -19.31506
+Profit Multiplier: 1.24
+Reached ATH on: 2021-02-13T01:32:41.569Z
+
+yearn.finance (YFI)
+Rank: 56
+Market Cap: 1,311,389,380		24h Volume: 668,668,450
+--------------------------------------------------
+Current price: 41566
+--------------------------------------------------
+All Time High: 51544	Change: -19.35958
+Profit Multiplier: 1.24
+Reached ATH on: 2021-02-12T11:27:55.661Z
+
+HUSD (HUSD)
+Rank: 92
+Market Cap: 517,372,031		24h Volume: 175,916,264
+--------------------------------------------------
+Current price: 1.01
+--------------------------------------------------
+All Time High: 1.25	Change: -20.07219
+Profit Multiplier: 1.24
+Reached ATH on: 2020-03-13T02:40:09.956Z
+
+Polygon (MATIC)
+Rank: 88
+Market Cap: 561,394,579		24h Volume: 256,178,185
+--------------------------------------------------
+Current price: 0.113313
+--------------------------------------------------
+All Time High: 0.141903	Change: -20.3407
+Profit Multiplier: 1.25
+Reached ATH on: 2021-02-10T10:27:05.077Z
+
+The Graph (GRT)
+Rank: 30
+Market Cap: 2,765,628,751		24h Volume: 1,169,434,146
+--------------------------------------------------
+Current price: 2.26
+--------------------------------------------------
+All Time High: 2.84	Change: -20.54679
+Profit Multiplier: 1.26
+Reached ATH on: 2021-02-12T07:28:45.775Z
+
+Reserve Rights Token (RSR)
+Rank: 87
+Market Cap: 570,236,747		24h Volume: 406,819,860
+--------------------------------------------------
+Current price: 0.060899
+--------------------------------------------------
+All Time High: 0.077358	Change: -21.1427
+Profit Multiplier: 1.27
+Reached ATH on: 2021-02-13T18:34:48.150Z
+
+Terra (LUNA)
+Rank: 33
+Market Cap: 2,526,440,454		24h Volume: 236,581,655
+--------------------------------------------------
+Current price: 5.66
+--------------------------------------------------
+All Time High: 7.16	Change: -21.38606
+Profit Multiplier: 1.27
+Reached ATH on: 2021-02-09T21:41:49.808Z
+
+NEXO (NEXO)
+Rank: 68
+Market Cap: 966,135,253		24h Volume: 16,919,321
+--------------------------------------------------
+Current price: 1.74
+--------------------------------------------------
+All Time High: 2.2	Change: -21.59188
+Profit Multiplier: 1.26
+Reached ATH on: 2018-05-08T19:35:46.469Z
+
+Cardano (ADA)
+Rank: 4
+Market Cap: 28,422,534,224		24h Volume: 6,013,578,390
+--------------------------------------------------
+Current price: 0.892328
+--------------------------------------------------
+All Time High: 1.18	Change: -24.48315
+Profit Multiplier: 1.32
+Reached ATH on: 2018-01-04T00:00:00.000Z
+
+LEO Token (LEO)
+Rank: 55
+Market Cap: 1,433,429,745		24h Volume: 2,108,000
+--------------------------------------------------
+Current price: 1.49
+--------------------------------------------------
+All Time High: 2.03	Change: -26.57519
+Profit Multiplier: 1.36
+Reached ATH on: 2019-06-26T14:44:57.684Z
+
+Waves (WAVES)
+Rank: 62
+Market Cap: 1,138,324,509		24h Volume: 222,846,787
+--------------------------------------------------
+Current price: 11.39
+--------------------------------------------------
+All Time High: 16.08	Change: -29.19414
+Profit Multiplier: 1.41
+Reached ATH on: 2017-12-21T00:00:00.000Z
+
+Elrond (EGLD)
+Rank: 32
+Market Cap: 2,583,273,001		24h Volume: 681,955,131
+--------------------------------------------------
+Current price: 151.41
+--------------------------------------------------
+All Time High: 214.12	Change: -29.74964
+Profit Multiplier: 1.41
+Reached ATH on: 2021-02-09T07:39:33.837Z
+
+Dogecoin (DOGE)
+Rank: 12
+Market Cap: 7,498,266,720		24h Volume: 3,725,711,621
+--------------------------------------------------
+Current price: 0.059292
+--------------------------------------------------
+All Time High: 0.083947	Change: -30.42813
+Profit Multiplier: 1.42
+Reached ATH on: 2021-02-08T15:22:32.047Z
+
+0x (ZRX)
+Rank: 58
+Market Cap: 1,254,806,881		24h Volume: 301,360,673
+--------------------------------------------------
+Current price: 1.68
+--------------------------------------------------
+All Time High: 2.5	Change: -33.02229
+Profit Multiplier: 1.49
+Reached ATH on: 2018-01-13T00:00:00.000Z
+
+cDAI (CDAI)
+Rank: 45
+Market Cap: 1,957,522,737		24h Volume: 89,445,903
+--------------------------------------------------
+Current price: 0.02107316
+--------------------------------------------------
+All Time High: 0.03159087	Change: -33.29349
+Profit Multiplier: 1.50
+Reached ATH on: 2020-10-12T21:29:00.007Z
+
+UMA (UMA)
+Rank: 53
+Market Cap: 1,515,140,806		24h Volume: 112,047,391
+--------------------------------------------------
+Current price: 27.14
+--------------------------------------------------
+All Time High: 41.56	Change: -34.69982
+Profit Multiplier: 1.53
+Reached ATH on: 2021-02-04T11:27:11.433Z
+
+Avalanche (AVAX)
+Rank: 29
+Market Cap: 2,982,461,865		24h Volume: 456,391,418
+--------------------------------------------------
+Current price: 38.76
+--------------------------------------------------
+All Time High: 59.4	Change: -34.7439
+Profit Multiplier: 1.53
+Reached ATH on: 2021-02-10T22:23:34.616Z
+
+BitTorrent (BTT)
+Rank: 77
+Market Cap: 796,584,916		24h Volume: 541,862,251
+--------------------------------------------------
+Current price: 0.00126086
+--------------------------------------------------
+All Time High: 0.00192267	Change: -37.13703
+Profit Multiplier: 1.52
+Reached ATH on: 2021-02-09T08:04:57.691Z
+
+DigiByte (DGB)
+Rank: 61
+Market Cap: 1,135,028,646		24h Volume: 218,605,949
+--------------------------------------------------
+Current price: 0.080154
+--------------------------------------------------
+All Time High: 0.135235	Change: -40.22381
+Profit Multiplier: 1.69
+Reached ATH on: 2018-01-06T00:00:00.000Z
+
+Basic Attention Token (BAT)
+Rank: 74
+Market Cap: 854,709,451		24h Volume: 409,792,834
+--------------------------------------------------
+Current price: 0.574775
+--------------------------------------------------
+All Time High: 0.959505	Change: -40.32723
+Profit Multiplier: 1.67
+Reached ATH on: 2018-01-09T00:00:00.000Z
+
+Litecoin (LTC)
+Rank: 8
+Market Cap: 14,268,281,958		24h Volume: 9,552,834,233
+--------------------------------------------------
+Current price: 216.12
+--------------------------------------------------
+All Time High: 360.66	Change: -40.5057
+Profit Multiplier: 1.67
+Reached ATH on: 2017-12-18T00:00:00.000Z
+
+Zilliqa (ZIL)
+Rank: 51
+Market Cap: 1,578,024,677		24h Volume: 442,270,411
+--------------------------------------------------
+Current price: 0.13519
+--------------------------------------------------
+All Time High: 0.230307	Change: -41.47037
+Profit Multiplier: 1.70
+Reached ATH on: 2018-05-10T02:56:14.058Z
+
+Stellar (XLM)
+Rank: 11
+Market Cap: 11,325,356,223		24h Volume: 2,727,800,167
+--------------------------------------------------
+Current price: 0.508043
+--------------------------------------------------
+All Time High: 0.875563	Change: -42.24723
+Profit Multiplier: 1.72
+Reached ATH on: 2018-01-03T00:00:00.000Z
+
+Bitcoin SV (BSV)
+Rank: 18
+Market Cap: 4,607,164,108		24h Volume: 2,053,657,168
+--------------------------------------------------
+Current price: 248.51
+--------------------------------------------------
+All Time High: 438.61	Change: -43.68964
+Profit Multiplier: 1.76
+Reached ATH on: 2020-01-14T23:34:56.231Z
+
+Crypto.com Coin (CRO)
+Rank: 44
+Market Cap: 2,040,580,876		24h Volume: 113,947,766
+--------------------------------------------------
+Current price: 0.087911
+--------------------------------------------------
+All Time High: 0.190943	Change: -53.95956
+Profit Multiplier: 2.17
+Reached ATH on: 2020-08-21T07:44:09.285Z
+
+Hedera Hashgraph (HBAR)
+Rank: 65
+Market Cap: 1,048,152,760		24h Volume: 167,682,250
+--------------------------------------------------
+Current price: 0.146804
+--------------------------------------------------
+All Time High: 0.325084	Change: -54.84116
+Profit Multiplier: 2.21
+Reached ATH on: 2019-09-17T09:03:31.347Z
+
+Monero (XMR)
+Rank: 20
+Market Cap: 4,089,852,727		24h Volume: 939,355,233
+--------------------------------------------------
+Current price: 229.61
+--------------------------------------------------
+All Time High: 542.33	Change: -57.72953
+Profit Multiplier: 2.36
+Reached ATH on: 2018-01-09T00:00:00.000Z
+
+Algorand (ALGO)
+Rank: 60
+Market Cap: 1,145,783,224		24h Volume: 1,066,902,580
+--------------------------------------------------
+Current price: 1.43
+--------------------------------------------------
+All Time High: 3.56	Change: -59.93657
+Profit Multiplier: 2.49
+Reached ATH on: 2019-06-20T14:51:19.480Z
+
+Ethereum Classic (ETC)
+Rank: 49
+Market Cap: 1,767,034,383		24h Volume: 2,586,997,705
+--------------------------------------------------
+Current price: 15.29
+--------------------------------------------------
+All Time High: 44.34	Change: -65.74237
+Profit Multiplier: 2.90
+Reached ATH on: 2018-01-14T00:00:00.000Z
+
+Loopring (LRC)
+Rank: 69
+Market Cap: 918,843,244		24h Volume: 128,612,078
+--------------------------------------------------
+Current price: 0.738857
+--------------------------------------------------
+All Time High: 2.4	Change: -69.33934
+Profit Multiplier: 3.25
+Reached ATH on: 2018-01-09T00:00:00.000Z
+
+Voyager Token (VGX)
+Rank: 76
+Market Cap: 823,788,203		24h Volume: 9,837,802
+--------------------------------------------------
+Current price: 3.71
+--------------------------------------------------
+All Time High: 12.47	Change: -70.29231
+Profit Multiplier: 3.36
+Reached ATH on: 2018-01-06T00:00:00.000Z
+
+IOTA (MIOTA)
+Rank: 23
+Market Cap: 3,765,093,813		24h Volume: 531,688,896
+--------------------------------------------------
+Current price: 1.35
+--------------------------------------------------
+All Time High: 5.25	Change: -74.19249
+Profit Multiplier: 3.89
+Reached ATH on: 2017-12-19T00:00:00.000Z
+
+OMG Network (OMG)
+Rank: 71
+Market Cap: 893,328,007		24h Volume: 758,458,430
+--------------------------------------------------
+Current price: 6.4
+--------------------------------------------------
+All Time High: 25.62	Change: -75.13827
+Profit Multiplier: 4.00
+Reached ATH on: 2018-01-13T00:00:00.000Z
+
+IOST (IOST)
+Rank: 85
+Market Cap: 594,835,684		24h Volume: 351,627,772
+--------------------------------------------------
+Current price: 0.03220151
+--------------------------------------------------
+All Time High: 0.129829	Change: -75.19691
+Profit Multiplier: 4.03
+Reached ATH on: 2018-01-24T00:00:00.000Z
+
+TRON (TRX)
+Rank: 21
+Market Cap: 3,795,649,750		24h Volume: 3,006,446,304
+--------------------------------------------------
+Current price: 0.053555
+--------------------------------------------------
+All Time High: 0.231673	Change: -77.13701
+Profit Multiplier: 4.33
+Reached ATH on: 2018-01-05T00:00:00.000Z
+
+Filecoin (FIL)
+Rank: 36
+Market Cap: 2,366,736,979		24h Volume: 918,956,212
+--------------------------------------------------
+Current price: 45.5
+--------------------------------------------------
+All Time High: 208.95	Change: -78.2248
+Profit Multiplier: 4.59
+Reached ATH on: 2020-10-15T09:43:23.730Z
+
+NEO (NEO)
+Rank: 28
+Market Cap: 3,035,748,500		24h Volume: 1,799,646,409
+--------------------------------------------------
+Current price: 43.23
+--------------------------------------------------
+All Time High: 198.38	Change: -78.30343
+Profit Multiplier: 4.59
+Reached ATH on: 2018-01-15T00:00:00.000Z
+
+EOS (EOS)
+Rank: 19
+Market Cap: 4,581,818,629		24h Volume: 5,318,237,270
+--------------------------------------------------
+Current price: 4.84
+--------------------------------------------------
+All Time High: 22.71	Change: -78.81638
+Profit Multiplier: 4.69
+Reached ATH on: 2018-04-29T07:50:33.540Z
+
+NEM (XEM)
+Rank: 24
+Market Cap: 3,543,073,669		24h Volume: 241,064,194
+--------------------------------------------------
+Current price: 0.395606
+--------------------------------------------------
+All Time High: 1.87	Change: -78.93141
+Profit Multiplier: 4.73
+Reached ATH on: 2018-01-07T00:00:00.000Z
+
+Nano (NANO)
+Rank: 72
+Market Cap: 885,562,372		24h Volume: 213,790,266
+--------------------------------------------------
+Current price: 6.69
+--------------------------------------------------
+All Time High: 33.69	Change: -80.27537
+Profit Multiplier: 5.04
+Reached ATH on: 2018-01-02T00:00:00.000Z
+
+Bitcoin Cash (BCH)
+Rank: 9
+Market Cap: 13,639,404,294		24h Volume: 11,064,328,327
+--------------------------------------------------
+Current price: 737.04
+--------------------------------------------------
+All Time High: 3785.82	Change: -80.68907
+Profit Multiplier: 5.14
+Reached ATH on: 2017-12-20T00:00:00.000Z
+
+Dash (DASH)
+Rank: 31
+Market Cap: 2,635,205,690		24h Volume: 4,143,724,315
+--------------------------------------------------
+Current price: 263.73
+--------------------------------------------------
+All Time High: 1493.59	Change: -82.31456
+Profit Multiplier: 5.66
+Reached ATH on: 2017-12-20T00:00:00.000Z
+
+XRP (XRP)
+Rank: 6
+Market Cap: 25,952,984,309		24h Volume: 6,772,373,511
+--------------------------------------------------
+Current price: 0.571943
+--------------------------------------------------
+All Time High: 3.4	Change: -83.28027
+Profit Multiplier: 5.94
+Reached ATH on: 2018-01-07T00:00:00.000Z
+
+ICON (ICX)
+Rank: 63
+Market Cap: 1,119,193,201		24h Volume: 452,495,064
+--------------------------------------------------
+Current price: 1.91
+--------------------------------------------------
+All Time High: 13.16	Change: -85.47492
+Profit Multiplier: 6.89
+Reached ATH on: 2018-01-09T00:00:00.000Z
+
+Siacoin (SC)
+Rank: 86
+Market Cap: 576,792,133		24h Volume: 53,222,129
+--------------------------------------------------
+Current price: 0.01232198
+--------------------------------------------------
+All Time High: 0.092868	Change: -86.79186
+Profit Multiplier: 7.54
+Reached ATH on: 2018-01-06T00:00:00.000Z
+
+Ontology (ONT)
+Rank: 66
+Market Cap: 1,000,456,709		24h Volume: 968,378,348
+--------------------------------------------------
+Current price: 1.24
+--------------------------------------------------
+All Time High: 10.92	Change: -88.66076
+Profit Multiplier: 8.81
+Reached ATH on: 2018-05-03T01:43:05.844Z
+
+Lisk (LSK)
+Rank: 93
+Market Cap: 496,194,153		24h Volume: 111,530,906
+--------------------------------------------------
+Current price: 3.47
+--------------------------------------------------
+All Time High: 34.92	Change: -90.07954
+Profit Multiplier: 10.06
+Reached ATH on: 2018-01-07T00:00:00.000Z
+
+Qtum (QTUM)
+Rank: 80
+Market Cap: 687,792,895		24h Volume: 868,228,687
+--------------------------------------------------
+Current price: 6.67
+--------------------------------------------------
+All Time High: 100.22	Change: -93.37047
+Profit Multiplier: 15.03
+Reached ATH on: 2018-01-06T00:00:00.000Z
+
+Curve DAO Token (CRV)
+Rank: 84
+Market Cap: 641,269,433		24h Volume: 375,521,784
+--------------------------------------------------
+Current price: 2.86
+--------------------------------------------------
+All Time High: 54.01	Change: -94.7015
+Profit Multiplier: 18.88
+Reached ATH on: 2020-08-14T04:53:44.010Z
+
+Zcash (ZEC)
+Rank: 48
+Market Cap: 1,775,854,439		24h Volume: 2,766,440,891
+--------------------------------------------------
+Current price: 164.73
+--------------------------------------------------
+All Time High: 3191.93	Change: -94.84755
+Profit Multiplier: 19.38
+Reached ATH on: 2016-10-29T00:00:00.000Z
+
+ENTER to continue...CryptoVizor
+All-In-One Cryptocurrency Tracker
+------------------------------
+
+1. Trending Cryptos List
+2. View All Time Highs
+9. Admin
+0. Exit Program
+
+Select an option: 
