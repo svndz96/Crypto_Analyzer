@@ -1,42 +1,18 @@
 
 from libraries import *
 from crypto_functions import *
+import plotly.express as px
 
-import matplotlib.pyplot as plt
+import dateutil.parser as dp
 
-
-
-def search_crypto(cryptos):
-
-	search = input('Enter cryptocurrency to display info: ')
+def search_crypto(cryptos, search):
 	for item in cryptos:
 		if item.get('symbol') == search:
 			print(item.get('name'))
 			print(item.get('current_price'))
-
 			input()
 			
 
-def generate_sparklines(cryptos, path):
-	folder = 'sparklines'
-	neon_pink = '#ff07db'
-	neon_cyan = '#00fefc'
-
-	for item in cryptos:
-
-		sparkline = item.get('sparkline')
-		if sparkline is not None:
-			if sparkline[0] < sparkline[-1]:
-				plt.plot(sparkline, neon_cyan)
-			else:
-				plt.plot(sparkline, neon_pink)
-
-			plt.axis('off')
-			filename = item.get('symbol') + '.png'
-			destination = "{}/".format(folder) + filename
-			plt.savefig(destination, transparent=True)
-			plt.clf()
-		print(item.get('id'))
 
 
 def update_watchlist():
@@ -46,9 +22,11 @@ def update_watchlist():
 		blacklist = json.load(file)
 	return watchlist, blacklist
 
+
+
 def watchlist_creator(cryptos, watchlist, blacklist):
 	for coin in cryptos:
-		print(coin.get('name') + "({})".format(coin.get('symbol')))
+		crypto_info(coin)
 		print('W. Add to Watchlist')
 		print('B. Add to Blacklist')
 		print('Q. Quit')
@@ -59,6 +37,7 @@ def watchlist_creator(cryptos, watchlist, blacklist):
 			blacklist.append(coin.get('symbol'))
 		elif select == 'Q':
 			break
+		os.system('clear')
 	watchlist_json = json.dumps(watchlist)
 	with open('watchlist.txt', 'w') as file:
 		file.write(watchlist_json)
@@ -76,12 +55,35 @@ def global_crypto():
 
 def list_coins(cryptos):
 	for item in cryptos:
-		print(item.get('name') + ' ' + "({})".format(item.get('symbol').upper()))
-		print('Rank: ' + str(item.get('rank')))
-		print('Market Cap: ' + "{:,.0f}".format(item.get('market_cap')))
+		crypto_info(item)
+	input()
+
+
+
+def dominance_simulator(cryptos, market):
+	market_cap = market.get('market_cap')
+
+	top = 100
+	for item in cryptos[:top]:
+		crypto_info(item)
 		print('Dominance: ' + "{:.2f}".format(item.get('dominance')))
 		print('')
 	input()
+
+
+
+
+def test(cryptos):
+	test = cryptos[0].get('ath_date')
+	parsed_t = dp.parse(test)
+	t_in_seconds = parsed_t.timestamp()
+	print(t_in_seconds)
+	input()
+
+
+
+
+
 
 
 
@@ -90,21 +92,23 @@ def main():
 
 	os.system('clear')
 	#list of crypto dictionary objects
-	market_data = global_crypto()
-	cryptos = update_cryptos(market_data)
-	save_json(cryptos, 'cryptosJSON.txt')
-	
+	market = global_crypto()
+	cryptos = update_cryptos(market)
+	cryptos = sorted(cryptos, key=itemgetter('rank'), reverse=False)
+
 
 
 	#Parameters
 	stablecoins = ['wbtc', 'cusdc', 'ausdc', 'usdt', 'ampl', 'dai', 'eosdt', 'dusd', 'dgx', 'esd', 'susd', 'tusd', 'pbtc', 'pax']
 	watchlist, blacklist = update_watchlist()
-	#def update_watchlist():
-	with open('watchlist.txt', 'r') as file:
-		watchlist = json.load(file)
-	with open('blacklist.txt', 'r') as file:
-		blacklist = json.load(file)
 	blacklist = blacklist + stablecoins
+	#vs = get_vs_currencies()
+	vs_currency = 'usd'
+
+
+
+
+	#test(cryptos)
 
 
 
@@ -115,12 +119,8 @@ def main():
 	while (menu):
 		os.system('clear')
 
-		print('Market Cap: ' + "{:,.0f}".format(market_data.get('data').get('total_market_cap').get('usd')))
-		print('Change: ' + "{:.2f}".format(market_data.get('data').get('market_cap_change_percentage_24h_usd')))
 
-		print('24h Volume: ' + "{:,.0f}".format(market_data.get('data').get('total_volume').get('usd')))
-		print('')
-
+		market_info(market)
 		
 
 		header_title('CryptoVizor', 'All-In-One Cryptocurrency Tracker')
@@ -128,18 +128,14 @@ def main():
 		print('2. Watchlist/Blacklist')
 		print('3. Show coins')
 		print('4. Generate Sparklines')
+		print('5. Dominance Simulator')
+		print('6. Biggest Movers')
 
 
-		print('')
+
+
+		print('7. Search Date')
 		print('11. View All Time Highs')
-		print('4. Dominance Simulator')
-		print('5. Plot Sparklines')
-
-		print()
-		print('7. Create Crypto List')
-		print()
-		print('8. Update Crypto List - Quick')
-		print('9. Update Crypto List - Hourly')
 
 		print()
 		print('0. Exit Program')
@@ -147,32 +143,38 @@ def main():
 
 
 
-
 		select = input('Select an option: ')
 		os.system('clear')
+
+
 		if(select == '1'):
-			search_crypto(cryptos)
+			search = input('Enter cryptocurrency to display info: ')
+			search_crypto(cryptos, search)
+
+
+
 		elif(select == '2'):
 			watchlist_creator(cryptos, watchlist, blacklist)
 
 		elif(select == '3'):
 			list_coins(cryptos)
+		
+		
+	
 		elif(select == '4'):
-			list_coins(generate_sparklines(cryptos, my_path))
+			for item in cryptos:
+				generate_sparklines(item)
+				print(item.get('id'))
 
+		elif(select == '5'):
+			dominance_simulator(cryptos, market)
 
-
+		elif(select == '6'):
+			top_movers(cryptos, market)
+	
 		elif(select == '11'):
 			ath_profit(cryptos, blacklist)
 
-		elif(select == '5'):
-			sparkline_plot()
-		elif(select == '7'):
-			create_cryptos()
-		elif(select == '8'):
-			update_cryptos(market_data)
-		elif(select == '9'):
-			create_cryptos()
 
 
 		elif(select == '0'):

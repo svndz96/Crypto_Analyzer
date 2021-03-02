@@ -1,40 +1,9 @@
 from libraries import *
 
 
-def coingecko_markets_api():
-	vs_currency = 'usd'
-	order = 'market_cap_desc'
-	per_page = '100'
-	page = '1'
-	sparkline = True
-	price_change_percentage = '1h%2C24h%2C7d%2C30d%2C1y'
-	
-	coingecko_markets_url = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=' +vs_currency+ '&order=' +order+ '&per_page=' +per_page+ '&page=' +page+ '&sparkline=' +str(sparkline)+ '&price_change_percentage=' +price_change_percentage
-	return coingecko_markets_url
-
-
-#Creating initial crypto list (id, name, symbol)
-def create_cryptos():
-	coin_list_request = requests.get('https://api.coingecko.com/api/v3/coins/list')
-	coin_list_dict = coin_list_request.json()
-
-	coin_list = []
-	for item in coin_list_dict:
-		coin_dict = {}
-		coin_dict['id'] = item.get('id')
-		coin_dict['name'] = item.get('name')
-		coin_dict['symbol'] = item.get('symbol')
-		coin_list.append(coin_dict)
-	save_json(coin_list, 'coin_list.txt')
-
-def update_cryptos_minute():
-	crypto_market_request = requests.get(coingecko_markets_api())
-	crypto_market_dict = crypto_market_request.json()
-	
-
 def update_cryptos(crypto_market):
 	crypto_list = []
-	r = requests.get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=true&price_change_percentage=1h%2C24h%2C7d%2C30d%2C1y')
+	r = requests.get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page=1&sparkline=true&price_change_percentage=1h%2C24h%2C7d%2C30d%2C1y')
 	r_dict = r.json()
 
 	#values for crypto profile
@@ -50,7 +19,7 @@ def update_cryptos(crypto_market):
 		crypto_dict['rank'] = item.get('market_cap_rank')
 		crypto_dict['market_cap'] = item.get('market_cap')
 		crypto_dict['current_price'] = item.get('current_price')
-		crypto_dict['volume_24'] = item.get('total_volume')
+		crypto_dict['volume_24h'] = item.get('total_volume')
 		crypto_dict['low_24h'] = item.get('low_24h')
 		crypto_dict['high_24h'] = item.get('high_24h')
 
@@ -80,6 +49,60 @@ def update_cryptos(crypto_market):
 	return crypto_list
 
 
+def crypto_info(crypto):
+	print(crypto.get('name') + ' ' + "({})".format(crypto.get('symbol').upper()))
+	print('Rank: ' + str(crypto.get('rank')))
+	print('Market Cap: ' + "${:,.0f}".format(crypto.get('market_cap')))
+	print('24h Volume: ' + "${:,.0f}".format(crypto.get('volume_24h')))
+
+	print('Current Price: ' + "${:,.2f}".format(crypto.get('current_price')))
+	print('Price change (%): ' + "{:.2f}".format(crypto.get('price_change_percentage_24h')))
+	print('')
+
+def market_info(market):
+	print('Market Cap: ' + "{:,.0f}".format(market.get('data').get('total_market_cap').get('usd')))
+	print('24h Change: ' + "{:.2f}".format(market.get('data').get('market_cap_change_percentage_24h_usd')))
+
+	print('24h Volume: ' + "{:,.0f}".format(market.get('data').get('total_volume').get('usd')))
+	print('Bitcoin Dominance: ' + "{:.2f}%".format(market.get('data').get('market_cap_percentage').get('btc')))
+
+	print('')
+
+
+
+
+
+def coingecko_markets_api():
+	vs_currency = 'usd'
+	order = 'market_cap_desc'
+	per_page = '100'
+	page = '1'
+	sparkline = True
+	price_change_percentage = '1h%2C24h%2C7d%2C30d%2C1y'
+	
+	coingecko_markets_url = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=' +vs_currency+ '&order=' +order+ '&per_page=' +per_page+ '&page=' +page+ '&sparkline=' +str(sparkline)+ '&price_change_percentage=' +price_change_percentage
+	return coingecko_markets_url
+
+
+#Creating initial crypto list (id, name, symbol)
+def create_cryptos():
+	coin_list_request = requests.get('https://api.coingecko.com/api/v3/coins/list')
+	coin_list_dict = coin_list_request.json()
+
+	coin_list = []
+	for item in coin_list_dict:
+		coin_dict = {}
+		coin_dict['id'] = item.get('id')
+		coin_dict['name'] = item.get('name')
+		coin_dict['symbol'] = item.get('symbol')
+		coin_list.append(coin_dict)
+	save_json(coin_list, 'coin_list.txt')
+
+
+
+
+
+
 def save_json(dicts_list, file_name):
 	crypto_json = json.dumps(dicts_list)
 	
@@ -88,9 +111,6 @@ def save_json(dicts_list, file_name):
 	json_file.close() 
 	return crypto_json
 
-
-def print_json(dicts_list):
-	pass
 
 
 def header_title(title, desc):
@@ -115,14 +135,85 @@ def ath_profit(cryptos, blacklist):
 	cryptos_sorted = sorted(cryptos, key=itemgetter('ath_change_percentage'), reverse=True) 
 	for item in cryptos_sorted:
 		if (abs(item.get('ath_change_percentage')) >= ath_change) & (item.get('rank') <= rank) & (item.get('symbol') not in blacklist):
-			print(item.get('name') + ' (' + str(item.get('symbol')).upper() + ')')
-			print('Rank: ' + str(item.get('rank')))
-			print('Market Cap: ' + "{:,}".format(item.get('market_cap')) + '\t\t24h Volume: ' + "{:,}".format(item.get('volume_24')))
-			print('--------------------------------------------------')
-			print('Current price: ' + str(item.get('current_price')))
-			print('--------------------------------------------------')
+			crypto_info(item)
 			print('All Time High: ' + str(item.get('ath')) + '\tChange: ' + str(item.get('ath_change_percentage')))
 			print('Profit Multiplier: ' + "{:.2f}".format(item.get('profit_multiplier')))
 			print('Reached ATH on: ' + str(item.get('ath_date')))
 			print()
 	input('ENTER to continue...')
+
+
+
+
+
+def top_movers(cryptos, market):
+	gain = 20
+	loss = -20
+
+	gainers = []
+	losers = []
+
+	for item in cryptos:
+		if item.get('price_change_percentage_24h') is not None:
+			if item.get('price_change_percentage_24h') > gain:
+				gainers.append(item)
+			if item.get('price_change_percentage_24h') < loss:
+				losers.append(item)
+
+	print('Top Gainers: Increase of ' + str(gain) + '%+\n')
+	gainers_sorted = sorted(gainers, key=itemgetter('price_change_percentage_24h'), reverse=True)
+	for item in gainers_sorted:
+		crypto_info(item)
+	input()
+	os.system('clear')
+
+	print('Top Losers: Decrease of ' + str(gain) + '%+\n')
+	losers_sorted = sorted(losers, key=itemgetter('price_change_percentage_24h'), reverse=False)
+	for item in losers_sorted:
+		crypto_info(item)
+	input()
+
+
+
+
+
+#Generate 7d sparkline for single crypto
+def generate_sparklines(crypto):
+	folder = 'sparklines'
+	neon_pink = '#ff07db'
+	neon_cyan = '#00fefc'
+	
+	sparkline = crypto.get('sparkline')
+	if (sparkline is not None) and (len(sparkline) != 0):
+		if sparkline[0] < sparkline[-1]:
+			color = neon_cyan
+		else:
+			color = neon_pink
+
+		plt.plot(sparkline, color)
+		
+		plt.axis('off')
+		filename = crypto.get('symbol') + '.png'
+		destination = folder + '/' + filename
+		plt.savefig(destination, transparent=True)
+		plt.clf()
+
+
+
+
+
+def get_vs_currencies():
+	r = requests.get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page=1&sparkline=true&price_change_percentage=1h%2C24h%2C7d%2C30d%2C1y')
+	vs = r.json()
+	return vs
+
+
+
+
+
+
+
+
+
+
+
